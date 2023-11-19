@@ -1,4 +1,4 @@
-import { refs } from "./refs";
+import { refs } from "../utils/refs";
 
 export const closeModal = () => {
   const btnCloseModal = document.querySelector(".btn-close-modal");

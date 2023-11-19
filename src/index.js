@@ -2,13 +2,13 @@ import "./styles/index.scss";
 import "./index.html";
 
 // Refs
-import { refs } from "./componets/refs";
+import { refs } from "./utils/refs";
 // Модель данных
-import { data } from "./componets/todo-db";
+import { data } from "./data/todo-db";
 // Функция получения разметки
 import { getTaskTemplate } from "./componets/getTaskTemplate";
 // Function addTask add newTask
-import { addTask } from "./componets/addTask";
+import { addTask } from "./utils/addTask";
 
 import { closeModal, openModal, handlePressEscape } from "./componets/modal";
 import { getTaskTemplateFull } from "./componets/getTaskTemplateFull";
@@ -68,10 +68,10 @@ const handleList = (e) => {
   if (e.target === e.currentTarget) return;
 
   const parent = e.target.closest("li");
-  const buttonParrent = e.target.closest("button");
+  const parrentAction = e.target.closest("[data-action]");
   const { id } = parent.dataset;
 
-  const { action } = buttonParrent.dataset;
+  const { action } = parrentAction.dataset;
 
   switch (action) {
     case "completed":
