@@ -4,4 +4,5 @@ export const refs = {
   viewBtn: document.querySelector('[data-action="view"]'),
   contentModal: document.querySelector(".content-modal"),
   body: document.querySelector("body"),
+  listItem: document.querySelector("li"),
 };

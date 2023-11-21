@@ -26,7 +26,6 @@ const toggleComplited = (id) => {
     item.id === id ? { ...item, isDone: !item.isDone } : item
   );
   render();
-  console.log(items);
 };
 const toggleImpotant = (id) => {
   items = items.map((item) =>
@@ -65,13 +64,13 @@ const handleSubmit = (e) => {
 };
 
 const handleList = (e) => {
-  if (e.target === e.currentTarget) return;
+  if (e.target === e.currentTarget || e.target.nodeName === "LI") return;
+  // if (e.target.nodeName === "LI") return;
 
   const parent = e.target.closest("li");
-  const parrentAction = e.target.closest("[data-action]");
-  const { id } = parent.dataset;
-
-  const { action } = parrentAction.dataset;
+  const actionEl = e.target.closest("[data-action]");
+  const id = parent.dataset.id;
+  const { action } = actionEl.dataset;
 
   switch (action) {
     case "completed":
@@ -86,12 +85,8 @@ const handleList = (e) => {
     case "impotant":
       toggleImpotant(id);
       break;
-
-    default:
-      break;
   }
 };
-
 refs.form.addEventListener("submit", handleSubmit);
 refs.list.addEventListener("click", handleList);
 

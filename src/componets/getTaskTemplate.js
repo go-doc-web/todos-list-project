@@ -8,7 +8,7 @@ export const getTaskTemplate = (items) => {
         isImpotant,
       }) => `<li data-id="${id}" class="list-item">
           <div class="wrap">
-            <input type="checkbox"  id="" data-action="completed" ${
+            <input type="checkbox"   data-action="completed" ${
               isDone ? "checked" : ""
             } />
             <span class="item-text">${title}</span>
@@ -17,8 +17,8 @@ export const getTaskTemplate = (items) => {
             <button class="btn" type="button" data-action="impotant">
       ${changeIcon(isImpotant)}
             </button>
-            <button class="btn" type="button" data-action="view">
-              <svg
+            <button class="btn" type="button" data-action="view" >
+              <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
