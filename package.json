@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "core-js": "^3.26.1",
+    "core-js": "^3.35.1",
     "nanoid": "^3.3.4",
     "notiflix": "^3.2.6",
     "sass-loader": "^13.3.2"
